@@ -24,12 +24,14 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
         cancelledCourses: Cancelled Courses default-> Exclude Cancelled Courses 
         building: Building Code # Must have Instr, Course Code, Dept, or Breadth Specified
         room: Room Number # Must Building Specified
+
     Returns:
         A json response of collected info.
     """
 
     headers = {}
     parameters = {}
+    # params = {}
     websoc = "https://www.reg.uci.edu/perl/WebSoc"
 
     headers["User-Agents"] = f"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.{random.randrange(99)} (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36"
@@ -53,10 +55,11 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
     parameters["CancelledCourses"] = cancelledCourses
     parameters["Bldg"] = building
     parameters["Room"] = room
-
-    # Divison Options
-
-    
+    # for i in parameters:
+    #     if len(parameters[i]) != 0:
+    #         params[i] = parameters[i]
+    response = requests.post(websoc, params=parameters, headers=headers)
+    print(response.url)
 
 def getEnrollInfo(year : str, code : str) -> dict:
     """Scrape enrollment info from webreg.
@@ -127,9 +130,8 @@ def getYear() -> str:
     for i in r1:
         text = i.string
         if "(Law)" not in text:
-            if "Summer" not in text:
-                result = text
-                break
+            result = text
+            break
     year = result[0:4]
     tag = ""
     if "Winter" in result:
@@ -138,6 +140,12 @@ def getYear() -> str:
         tag = "-92"
     elif "Spring" in result:
         tag = "-14"
+    elif "Summer" in result and "10" in result:
+        tag = "-39"
+    elif "Summer" in result and "2" in result:
+        tag = "-76"
+    elif "Summer" in result and "1" in result and "Session" in result:
+        tag = "-25"
     return f"{year}{tag}"
 
 if __name__ == "__main__":
@@ -147,4 +155,4 @@ if __name__ == "__main__":
     # print(x) #dict of data
     # b = checkSpace(x)
     # print(b) #bool
-    webSocAPI()
+    webSocAPI(term=getYear(),secCodes="35600")
