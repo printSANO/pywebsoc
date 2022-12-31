@@ -1,4 +1,4 @@
 from websocAPI import webscrape, utils
 
 
-webscrape.webSocAPI(term=utils.getYear(),secCodes="35600")
+webscrape.webSocAPI(term=utils.getYear(),dept="I&C SCI", courseNum="31-33")
