@@ -1,3 +1,7 @@
+import requests
+import random
+from bs4 import BeautifulSoup as bs
+
 def getYear() -> str:
     """Check for the newly updated course term.
 

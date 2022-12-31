@@ -1,7 +1,6 @@
 import requests
 import random
 from bs4 import BeautifulSoup as bs
-from utils import getYear
 
 def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "ANY", secCodes = "", instrName = "", courseTitle = "", sectionType = "ALL", units = "", days = "", startTime = "", endTime = "", maxCap = "", fullCourses = "ANY", cancelledCourses = "EXCLUDE", building = "", room = ""):
     """Scrape info from webreg.
@@ -59,11 +58,11 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
     response = requests.post(websoc, params=parameters, headers=headers)
     print(response.url)
 
-if __name__ == "__main__":
-    # y = getYear()
-    # print(y)
-    # x = getEnrollInfo(y, "35600")
-    # print(x) #dict of data
-    # b = checkSpace(x)
-    # print(b) #bool
-    webSocAPI(term=getYear(),secCodes="35600")
+# if __name__ == "__main__":
+#     y = getYear()
+#     print(y)
+#     x = getEnrollInfo(y, "35600")
+#     print(x) #dict of data
+#     b = checkSpace(x)
+#     print(b) #bool
+#     webSocAPI(term=getYear(),secCodes="35600")
