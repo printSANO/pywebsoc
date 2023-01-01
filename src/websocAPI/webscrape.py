@@ -118,11 +118,3 @@ def getActualTitles(soup):
         temp[-1] = final_string
         final.append(" ".join(temp))
     return final
-# if __name__ == "__main__":
-#     y = getYear()
-#     print(y)
-#     x = getEnrollInfo(y, "35600")
-#     print(x) #dict of data
-#     b = checkSpace(x)
-#     print(b) #bool
-#     webSocAPI(term=getYear(),secCodes="35600")
