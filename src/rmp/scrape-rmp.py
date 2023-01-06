@@ -37,17 +37,9 @@ def gen_link(proff_info):
 
 def get_faculty():
 
-    url = 'https://catalogue.uci.edu/faculty/'
+    pass
 
-    page = requests.get(url=url, headers=headers)
-    soup = BeautifulSoup(page.text, "html.parser")
 
-    faculty = soup.find("div", {"class" :"clearfix"})
-    alls = faculty.find_all("span", {"class": "name"})
-    for i in alls:
-        print(i.text)
-
-    #print(page.text)
 
 
 if __name__ == "__main__":
