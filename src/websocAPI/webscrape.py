@@ -88,19 +88,24 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
         sections = []
         for k in range(lst[j]+2,lst[j+1]-1):
             iterDict = classDictTemplate.copy()
-            textDataTemp = allData[7].findChildren() #allData[k] is tr and findChildren is td
-            val = textDataTemp[4]
-            x = val.stripped_strings
-            for lll in x:
-                print(lll)
-            textData = [l.string for l in textDataTemp if l.name != "a"] #string values (text) of the values
+            #k is the class code changer
+            textDataTemp = allData[k].findChildren() #allData[k] is tr and findChildren is td
+            #TODO needs fix
+            text_strings = []
+            for l in textDataTemp:
+                if l.name != "a" and l.name != "br":
+                    text_strings.append(list(l.stripped_strings))
+
             for i in range(len(dataDictKeys)):
-                iterDict[dataDictKeys[i]] = textData[i]
+                if dataDictKeys[i] != "Instructor":
+                    if len(text_strings[i]) > 0:
+                        iterDict[dataDictKeys[i]] = text_strings[i][0]
+                    else:
+                        iterDict[dataDictKeys[i]] = None
+
             sections.append(iterDict)
-            break
         data[titleKey] = sections
-    # print(data)
-    # return data
+    return data
 
 def getCourseTitleIndex(soupClass):
     courseTitles = soupClass.find(class_="course-list").find_all(bgcolor="#fff0ff")
