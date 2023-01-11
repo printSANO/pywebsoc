@@ -102,6 +102,8 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
                         iterDict[dataDictKeys[i]] = text_strings[i][0]
                     else:
                         iterDict[dataDictKeys[i]] = None
+                else:
+                    iterDict[dataDictKeys[i]] = text_strings[i]
 
             sections.append(iterDict)
         data[titleKey] = sections

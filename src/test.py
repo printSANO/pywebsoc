@@ -1,5 +1,7 @@
 from websocAPI import webscrape, utils
+import json
 
 
 r = webscrape.webSocAPI(term=utils.getYear(),dept="I&C SCI", courseNum="33")
-# print(r)
+obj = json.dumps(r, indent=1)
+print(obj)
