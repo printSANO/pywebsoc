@@ -29,6 +29,8 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
         A json response of collected info.
     """
 
+    data = {} #final data to return
+
     headers = {}
     parameters = {}
     # params = {}
@@ -36,7 +38,7 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
 
     headers["User-Agents"] = f"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.{random.randrange(99)} (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36"
     parameters["ShowFinals"] = "1"
-    parameters["ShowComments"] = "1"
+    parameters["ShowComments"] = ""
     parameters["YearTerm"] = term
     parameters["Breadth"] = ge
     parameters["Dept"] = dept
@@ -55,52 +57,75 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
     parameters["CancelledCourses"] = cancelledCourses
     parameters["Bldg"] = building
     parameters["Room"] = room
-    response = requests.post(websoc, params=parameters, headers=headers)
-    print(response.url)
 
+    #reponse
+    response = requests.get(websoc, params=parameters, headers=headers)
+    # print(response.url)
 
-def getYear() -> str:
-    """Check for the newly updated course term.
-
-    Args:
-        None
-    Returns:
-        Current year and term
-
-    """
-    base_url = "https://www.reg.uci.edu/perl/WebSoc"
-    headers = {"User-Agent": f"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.{random.randrange(99)} (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36"}
-    
-    response = requests.post(base_url, headers=headers)
+    #beautofulsoup object
     soup = bs(response.text, features="html.parser")
-    r1 = soup.find('select').findChildren()
-    result = ""
-    for i in r1:
-        text = i.string
-        if "(Law)" not in text:
-            result = text
-            break
-    year = result[0:4]
-    tag = ""
-    if "Winter" in result:
-        tag = "-03"
-    elif "Fall" in result:
-        tag = "-92"
-    elif "Spring" in result:
-        tag = "-14"
-    elif "Summer" in result and "10" in result:
-        tag = "-39"
-    elif "Summer" in result and "2" in result:
-        tag = "-76"
-    elif "Summer" in result and "1" in result and "Session" in result:
-        tag = "-25"
-    return f"{year}{tag}"
 
-if __name__ == "__main__":
-    # y = getYear()
-    # print(y)
-    # x = getEnrollInfo(y, "35600")
-    # print(x) #dict of data
-    # b = checkSpace(x)
-    # print(b) #bool
-    webSocAPI(term=getYear(),secCodes="35600")
+    #title names
+    titleNames = getActualTitles(soup)
+    #title index
+    titleIndex = getCourseTitleIndex(soup)
+    #all data
+    allData = soup.find(class_="course-list").find_all("tr")
+
+    lst = []
+    for i in range(len(allData)):
+        if allData[i] in titleIndex:
+            lst.append(i)
+    lst.append(len(allData))
+
+    for j in range(0,len(lst)-1):
+        titleKey = titleNames[j] #course title index in dat
+        dataDictKeysTemp = allData[lst[j]+1].findChildren()
+        dataDictKeys = [dKeys.string for dKeys in dataDictKeysTemp]
+        classDictTemplate = {}
+        for dkey in dataDictKeys:
+            classDictTemplate[dkey] = ""
+        sections = []
+        for k in range(lst[j]+2,lst[j+1]-1):
+            iterDict = classDictTemplate.copy()
+            #k is the class code changer
+            textDataTemp = allData[k].findChildren() #allData[k] is tr and findChildren is td
+            #TODO needs fix
+            text_strings = []
+            for l in textDataTemp:
+                if l.name != "a" and l.name != "br":
+                    text_strings.append(list(l.stripped_strings))
+
+            for i in range(len(dataDictKeys)):
+                if dataDictKeys[i] != "Instructor":
+                    if len(text_strings[i]) > 0:
+                        iterDict[dataDictKeys[i]] = text_strings[i][0]
+                    else:
+                        iterDict[dataDictKeys[i]] = None
+                else:
+                    iterDict[dataDictKeys[i]] = text_strings[i]
+
+            sections.append(iterDict)
+        data[titleKey] = sections
+    return data
+
+def getCourseTitleIndex(soupClass):
+    courseTitles = soupClass.find(class_="course-list").find_all(bgcolor="#fff0ff")
+    return courseTitles
+
+def getActualTitles(soup):
+    filter_lst = ["(Prerequisites)\n\t", "\xa0"]
+    classes = soup.find_all(class_="CourseTitle")
+    final = []
+    for i in classes:
+        r = i.text
+        r2 = r.split(" ")
+        temp = []
+        for j in r2:
+            if j not in filter_lst and j != "":
+                temp.append(j)
+        temp_string = temp[-1]
+        final_string = temp_string.replace(u'\xa0', u'')
+        temp[-1] = final_string
+        final.append(" ".join(temp))
+    return final
