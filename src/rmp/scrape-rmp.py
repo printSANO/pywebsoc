@@ -21,9 +21,7 @@ def shovel(raw_proff):
     soup = BeautifulSoup(page.text, "html.parser")
     scr = str(soup.find_all('script')[10])
     data = scr[scr.index("window.__RELAY_STORE__ = ") + len("window.__RELAY_STORE__ = "):scr.index("}};") + 3].replace("\\", "")
-    #print(data)
     json_data = json.loads('{"data":{' + data[data.index("legacyId") - 1:data.index("UC Irvine") + 10] + "}" + "}")
-    #print(json.loads("{data:{" + data[data.index("legacyId") - 1:data.index("UC Irvine") + 10] + "}" + "}"))
     del json_data['data']['school']#, json_data['U2Nob29sLTEwNzQ=']
 
     json_data['data']['proff_ID'] = json_data['data']['legacyId']
@@ -31,17 +29,15 @@ def shovel(raw_proff):
     del json_data['data']['legacyId']
     print(json_data)
 
+    return json_data
+
 def gen_link(proff_info):
-    proff_tid = "13200"
-    proff_url = f"https://www.ratemyprofessors.com/professor?tid={proff_tid}"
 
-def get_faculty():
-
-    pass
-
+    data = shovel(proff_info)
+    
+    proff_url = f"https://www.ratemyprofessors.com/professor?tid={data['data']['proff_ID']}"
 
 
 
 if __name__ == "__main__":
-    get_faculty()
-    #shovel("A.KRONE MARTINS")
+    gen_link("A.KRONE-MARTINS")
