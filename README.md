@@ -56,8 +56,8 @@ print(utils.prettify(obj))
 ```
 
 ### **Arguments and Parameters** ##
-<br>
-| Tables        | Are           | Cool  |
+
+| function webSocAPI |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
