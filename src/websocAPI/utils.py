@@ -2,11 +2,17 @@ import requests
 import random
 from bs4 import BeautifulSoup as bs
 
-def getYear() -> str:
+class InvalidTermNameException(Exception):
+    pass
+class InvalidYearException(Exception):
+    pass
+
+def getYear(userTerm = None, userYear = None) -> str:
     """Check for the newly updated course term.
 
     Args:
-        None
+        year: manual year default None
+        term: manual term default None
     Returns:
         Current year and term
 
@@ -24,6 +30,14 @@ def getYear() -> str:
             result = text
             break
     year = result[0:4]
+    if userTerm:
+        result = userTerm
+    if userYear:
+        if 2017 < userYear <= int(year):
+            year = userYear
+        else:
+            raise InvalidYearException("Not a valid year")
+
     tag = ""
     if "Winter" in result:
         tag = "-03"
@@ -37,4 +51,6 @@ def getYear() -> str:
         tag = "-76"
     elif "Summer" in result and "1" in result and "Session" in result:
         tag = "-25"
+    else:
+        raise InvalidTermNameException("Not a valid term")
     return f"{year}{tag}"

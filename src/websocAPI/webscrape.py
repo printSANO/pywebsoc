@@ -67,6 +67,7 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
 
     #title names
     titleNames = getActualTitles(soup)
+    # print(titleNames)
     #title index
     titleIndex = getCourseTitleIndex(soup)
     #all data
@@ -95,18 +96,18 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
             for l in textDataTemp:
                 if l.name != "a" and l.name != "br":
                     text_strings.append(list(l.stripped_strings))
-
-            for i in range(len(dataDictKeys)):
-                if dataDictKeys[i] != "Instructor":
-                    if len(text_strings[i]) > 0:
-                        iterDict[dataDictKeys[i]] = text_strings[i][0]
+            if len(text_strings[0]) == 1:
+                for i in range(len(dataDictKeys)):
+                    if dataDictKeys[i] != "Instructor":
+                        if len(text_strings[i]) > 0:
+                            iterDict[dataDictKeys[i]] = text_strings[i][0]
+                        else:
+                            iterDict[dataDictKeys[i]] = None
                     else:
-                        iterDict[dataDictKeys[i]] = None
-                else:
-                    iterDict[dataDictKeys[i]] = text_strings[i]
-
-            sections.append(iterDict)
-        data[titleKey] = sections
+                        iterDict[dataDictKeys[i]] = text_strings[i]
+            if iterDict["Code"] != "":
+                sections.append(iterDict)
+            data[titleKey] = sections
     return data
 
 def getCourseTitleIndex(soupClass):
@@ -126,6 +127,7 @@ def getActualTitles(soup):
                 temp.append(j)
         temp_string = temp[-1]
         final_string = temp_string.replace(u'\xa0', u'')
+        final_string = final_string.replace("\n", "")
         temp[-1] = final_string
         final.append(" ".join(temp))
     return final
