@@ -38,7 +38,7 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
 
     headers["User-Agents"] = f"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.{random.randrange(99)} (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36"
     parameters["ShowFinals"] = "1"
-    parameters["ShowComments"] = ""
+    parameters["ShowComments"] = "0"
     parameters["YearTerm"] = term
     parameters["Breadth"] = ge
     parameters["Dept"] = dept
@@ -66,10 +66,10 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
     soup = bs(response.text, features="html.parser")
 
     #title names
-    titleNames = getActualTitles(soup)
+    titleNames = _getActualTitles(soup)
     # print(titleNames)
     #title index
-    titleIndex = getCourseTitleIndex(soup)
+    titleIndex = _getCourseTitleIndex(soup)
     #all data
     allData = soup.find(class_="course-list").find_all("tr")
 
@@ -110,11 +110,11 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
             data[titleKey] = sections
     return data
 
-def getCourseTitleIndex(soupClass):
+def _getCourseTitleIndex(soupClass):
     courseTitles = soupClass.find(class_="course-list").find_all(bgcolor="#fff0ff")
     return courseTitles
 
-def getActualTitles(soup):
+def _getActualTitles(soup):
     filter_lst = ["(Prerequisites)\n\t", "\xa0"]
     classes = soup.find_all(class_="CourseTitle")
     final = []
