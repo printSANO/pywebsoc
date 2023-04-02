@@ -271,8 +271,8 @@ print(utils.prettify(obj))
 
 | Valid Value | Explanation |
 | ------------- |-------------|
-| 0xx        | Lower Divion Only |
-| 1xx        | Upper Divion Only |
+| 0xx        | Lower Divsion Only |
+| 1xx        | Upper Divsion Only |
 | 2xx        | Graduate/Professional Only |
 
 ##### secCodes #####
@@ -280,7 +280,7 @@ print(utils.prettify(obj))
 | Valid Value | Explanation |
 | ------------- |-------------|
 | 35980       | Course Code 35980 |
-| 35000-35600       | Courses with codes between 35000 ann 36000 |
+| 35000-35600       | Courses with codes between 35000 and 36000 |
 
 ##### instrName #####
 
@@ -381,3 +381,25 @@ print(utils.prettify(obj))
 | 100        | {building} 100 equivalent classroom|
 
 - Please refer to UCI map for list of buildings and their room numbers
+
+#### Functions in Utils  ####
+
+##### Function getYear #####
+
+| Parameter | Exaplanation | Default Value | Example Value |
+| ------------- | ------------- | ------------- | -------------|
+| userTerm       | User customized term | None (not n/a)| Spring |
+| userYear       | User customized year | None (not n/a)|  2022 |
+
+- Examples of getYear function:
+
+```python
+from websocAPI import utils
+default_output = utils.getYear() #This will return the most current year and term of courses available
+manual_term = utils.getYear("Winter") #This will return the Winter term of corresponding current year
+manual_year = utils.getYear(userYear=2021) ##This will return the most current term of 2021
+manual_term_and_year = utils.getYear("Winter", 2022) #This will return Winter term of 2022
+```
+
+
+##### Function prettify #####
