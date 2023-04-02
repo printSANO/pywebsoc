@@ -55,9 +55,9 @@ print(utils.prettify(obj))
 # }
 ```
 
-### **Arguments and Parameters** ##
+### **Arguments and Parameters** ###
 
-- WebSocAPI Main
+#### WebSocAPI Main ####
 
 | WebSocAPI's Parameters | Explanation |Default Value| Example Value|
 | ------------- |:-------------:| :--------:| --------:|
@@ -80,7 +80,10 @@ print(utils.prettify(obj))
 | building      | Building Code      |  ""   | "ELH" |
 | room          | Class Room Number      |  ""  | "100" |
 
-- WebSocAPI Parameter's Valid Values
+#### WebSocAPI Parameter's Valid Values ####
+
+- term
+
 | WebSocAPI's Parameters | Explanation |Default Value| Example Value|
 | ------------- |:-------------:| :--------:| --------:|
 | term          | Year and Term | ""        | "2023-14" |
