@@ -57,9 +57,9 @@ print(utils.prettify(obj))
 
 ### **Arguments and Parameters** ###
 
-#### WebSocAPI Main ####
+#### Function webSocAPI  ####
 
-| WebSocAPI's Parameters | Explanation |Default Value| Example Value|
+| webSocAPI's Parameters | Explanation |Default Value| Example Value|
 | ------------- |:-------------:| :--------:| --------:|
 | term          | Year and Term | ""        | "2023-14" |
 | ge            | General education |  "ANY"   | "GE-2" |
@@ -80,10 +80,85 @@ print(utils.prettify(obj))
 | building      | Building Code      |  ""   | "ELH" |
 | room          | Class Room Number      |  ""  | "100" |
 
-#### WebSocAPI Parameter's Valid Values ####
+#### webSocAPI Parameters' Valid Values ####
 
-- term
+##### term #####
 
-| WebSocAPI's Parameters | Explanation |Default Value| Example Value|
-| ------------- |:-------------:| :--------:| --------:|
-| term          | Year and Term | ""        | "2023-14" |
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+- term can be autofilled using utils.getYear()
+- Please check utils section
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
+
+##### ge #####
+
+| Valid Value | Explanation |
+| ------------- |-------------:|
+| 2023-14        | 2023 is the year and 14 indicates Spring |
