@@ -57,7 +57,7 @@ print(utils.prettify(obj))
 
 ### **Arguments and Parameters** ##
 
-| function webSocAPI |
+| WebSocAPI's Parameters |Default Value   | Valid Values  |
 | ------------- |:-------------:| -----:|
 | col 3 is      | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
