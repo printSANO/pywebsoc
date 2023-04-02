@@ -57,8 +57,8 @@ print(utils.prettify(obj))
 
 ### **Arguments and Parameters** ##
 
-| WebSocAPI's Parameters |Default Value   | Valid Values  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| WebSocAPI's Parameters | Explanation |Default Value   | Valid Values  |
+| ------------- |:-------------:| :--------:| --------:|
+| term      | right-aligned | $1600 |
+| ge      | centered      |   $12 |
+| dept | are neat      |    $1 |
