@@ -401,5 +401,8 @@ manual_year = utils.getYear(userYear=2021) ##This will return the most current t
 manual_term_and_year = utils.getYear("Winter", 2022) #This will return Winter term of 2022
 ```
 
-
 ##### Function prettify #####
+| Parameter | Exaplanation | Default Value | Example Value |
+| ------------- | ------------- | ------------- | -------------|
+| obj       | Response from webSocAPI | n/a | data from webSocAPI |
+| indents       | indent of prettified json | 1 |  2 |
