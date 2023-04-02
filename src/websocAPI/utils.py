@@ -33,7 +33,7 @@ def getYear(userTerm = None, userYear = None) -> str:
     if userTerm:
         result = userTerm
     if userYear:
-        if 2019 < userYear <= int(year):
+        if 2017 < userYear <= int(year):
             year = userYear
         else:
             raise InvalidYearException("Not a valid year")
