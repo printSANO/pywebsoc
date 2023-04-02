@@ -59,23 +59,23 @@ print(utils.prettify(obj))
 
 | WebSocAPI's Parameters | Explanation |Default Value   | Valid Values  |
 | ------------- |:-------------:| :--------:| --------:|
-| term      | right-aligned | $1600 | 4 |
-| ge      | centered      |   $12 | 4 |
-| dept | are neat      |    $1 | 4 |
-| courseNum | are neat      |    $1 | 4 |
-| divison | are neat      |    $1 | 4 |
-| secCodes | are neat      |    $1 | 4 |
-| instrName | are neat      |    $1 | 4 |
-| courseTitle | are neat      |    $1 | 4 |
-| sectionType | are neat      |    $1 | 4 |
-| units | are neat      |    $1 | 4 |
-| days | are neat      |    $1 | 4 |
-| startTime | are neat      |    $1 | 4 |
-| endTime | are neat      |    $1 | 4 |
-| maxCap | are neat      |    $1 | 4 |
-| fullCourses | are neat      |    $1 | 4 |
-| cancelledCourses | are neat      |    $1 | 4 |
-| building | are neat      |    $1 | 4 |
-| room | are neat      |    $1 | 4 |
+| term          | year and term | ""        | 4 |
+| ge            | centered      |   $12     | 4 |
+| dept          | are neat      |    $1     | 4 |
+| courseNum     | are neat      |    $1     | 4 |
+| divison       | are neat      |    $1     | 4 |
+| secCodes      | are neat      |    $1     | 4 |
+| instrName     | are neat      |    $1     | 4 |
+| courseTitle   | are neat      |    $1     | 4 |
+| sectionType   | are neat      |    $1     | 4 |
+| units         | are neat      |    $1     | 4 |
+| days          | are neat      |    $1     | 4 |
+| startTime     | are neat      |    $1     | 4 |
+| endTime       | are neat      |    $1     | 4 |
+| maxCap        | are neat      |    $1     | 4 |
+| fullCourses   | are neat      |    $1     | 4 |
+| cancelledCourses | are neat      |    $1  | 4 |
+| building      | are neat      |    $1     | 4 |
+| room          | are neat      |    $1     | 4 |
 
 
