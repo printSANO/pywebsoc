@@ -85,8 +85,9 @@ print(utils.prettify(obj))
 ##### term #####
 
 | Valid Value | Explanation |
-| ------------- |-------------:|
+| ------------- |-------------|
 | 2023-14        | 2023 is the year and 14 indicates Spring |
+| 2023-03        | 2023 is the year and 76 indicates Winter |
 
 - term can be autofilled using utils.getYear()
 - Please check utils section
@@ -94,71 +95,289 @@ print(utils.prettify(obj))
 ##### ge #####
 
 | Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
+| ------------- |-------------|
+| GE-1A        | Lower Divison Writing |
+| GE-1B        | Upper Divison Writing |
+| GE-2        | Science and Technology |
+| GE-3        | Social and Behavioral Sciences |
+| GE-4        | Arts and Humanities |
+| GE-5        | Quantitative, Symbolic, and Computational Reasoning |
+| GE-5A        | Quantitative Literacy  |
+| GE-5B        | Formal Reasoning |
+| GE-6        | Language Other Than English |
+| GE-7        | Multicultural Studies |
+| GE-8        | International/Global Issues |
 
-##### ge #####
-
-| Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
-
-##### ge #####
-
-| Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
-
-##### ge #####
+##### dept #####
 
 | Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
+| ------------- |-------------|
+| AC ENG | Academic English |
+| AFAM |   African American Studies |
+| ANATOMY |  Anatomy and Neurobiology |
+| ANESTH |    Anesthesiology |
+| ANTHRO |    Anthropology |
+| ARABIC | Arabic |
+| ARMN |  Armenian (started 2018 Spg) |
+| ART | Art |
+| ART HIS | Art History |
+| ARTS |   Arts |
+| ARTSHUM |   Arts and Humanities |
+| ASIANAM |   Asian American Studies |
+| BANA |   Business Analytics (started 2017 SS2) |
+| BATS |   Biomedical and Translational Science |
+| BIO SCI | Biological Sciences |
+| BIOCHEM |   Biological Chemistry |
+| BME |    Biomedical Engineering |
+| CAMPREC |  Campus Recreation |
+| CBE |    Chemical and Biomolecular Engineering (started 2018 Fall) |
+| CEM |    Community and Environmental Medicine |
+| CHC/LAT |    Chicano Latino |
+| CHEM |  Chemistry |
+| CHINESE |   Chinese |
+| CLASSIC |   Classics |
+| CLT&amp;THY |   Culture &amp; Theory |
+| COGS |   Cognitive Sciences  |
+| COM LIT |    Comparative Literature |
+| COMPSCI |   Computer Science |
+| CRITISM |    Criticism |
+| CRM/LAW |   Criminology, Law and Society |
+| CSE |    Computer Science and Engineering |
+| DANCE |  Dance |
+| DATA |   Data Science (started 2022 SS1) |
+| DERM |  Dermatology |
+| DEV BIO |    Developmental and Cell Biology |
+| DRAMA | Drama |
+| EARTHSS |   Earth System Science |
+| EAS |    East Asian Studies (started 2019 Fall) |
+| ECO EVO |   Ecology and Evolutionary Biology |
+| ECON |   Economics |
+| ECPS |   Embedded and Cyber-Physical Systems |
+| ED AFF | Educational Affairs (Sch of Med) |
+| EDUC |   Education |
+| EECS |   Electrical Engineering &amp; Computer Science |
+| EHS |    Environmental Health Sciences |
+| ENGLISH |   English |
+| ENGR |   Engineering |
+| ENGRCEE |  Engineering, Civil and Environmental |
+| ENGRMAE |  Engineering, Mechanical and Aerospace |
+| EPIDEM | Epidemiology |
+| ER MED |    Emergency Medicine |
+| EURO ST |   European Studies |
+| FAM MED |   Family Medicine |
+| FIN |  Finance (started 2017 Fall) |
+| FLM&amp;MDA |  Film and Media Studies |
+| FRENCH |    French |
+| GDIM |   Game Design and Interactive Media (started 2021 Fall) |
+| GEN&amp;SEX |   Gender and Sexuality Studies |
+| GERMAN |   German |
+| GLBL ME |   Global Middle East Studies |
+| GLBLCLT |   Global Cultures |
+| GREEK |  Greek |
+| HEBREW |   Hebrew |
+| HINDI |   Hindi |
+| HISTORY |   History |
+| HUMAN | Humanities |
+| HUMARTS |   Humanities and Arts |
+| I&C SCI |  Information and Computer Science |
+| IN4MATX |    Informatics |
+| INNO |   Masters of Innovation and Entrepreneurship (started 2019 Fall) |
+| INT MED |    Internal Medicine |
+| INTL ST |  International Studies |
+| IRAN |   Iranian (started 2020 Fall) |
+| ITALIAN | Italian |
+| JAPANSE |   Japanese |
+| KOREAN |   Korean |
+| LATIN |   Latin |
+| LAW |    Law |
+| LIT JRN |  Literary Journalism |
+| LPS | Logic and Philosophy of Science |
+| LSCI |    Language Science (started 2019 Fall) |
+| M&MG |  Microbiology and Molecular Genetics |
+| MATH |   Mathematics |
+| MED |    Medicine |
+| MED ED |    Medical Education |
+| MED HUM |   Medical Humanities |
+| MGMT |  Management |
+| MGMT EP |   Executive MBA |
+| MGMT FE |   Fully Employed MBA |
+| MGMT HC |   Health Care MBA |
+| MGMTMBA |  Management MBA |
+| MGMTPHD |  Management PhD |
+| MIC BIO | Microbiology |
+| MOL BIO |    Molecular Biology and Biochemistry |
+| MPAC |  Accounting |
+| MSE |    Materials Science and Engineering (started 2020 Fall) |
+| MUSIC |  Music |
+| NET SYS |   Networked Systems |
+| NEURBIO |   Neurobiology and Behavior |
+| NEUROL |    Neurology |
+| NUR SCI |    Nursing Science |
+| OB/GYN |    Obstetrics and Gynecology |
+| OPHTHAL |   Ophthalmology |
+| PATH |   Pathology and Laboratory Medicine |
+| PED GEN |   Pediatrics Genetics |
+| PEDS |   Pediatrics |
+| PERSIAN |   Persian |
+| PHARM | Pharmacology (started 2020 Fall) |
+| PHILOS | Philosophy |
+| PHMD |  Pharmacy (started 2021 Fall) |
+| PHRMSCI |   Pharmaceutical Sciences |
+| PHY SCI |    Physical Science |
+| PHYSICS |   Physics |
+| PHYSIO | Physiology and Biophysics |
+| PLASTIC |    Plastic Surgery |
+| PM&R |  Physical Medicine and Rehabilitation |
+| POL SCI |    Political Science |
+| PORTUG |    Portuguese |
+| PSCI |   Psychological Science (started 2019 Fall) |
+| PSYCH |  Cognitive Sciences |
+| PUB POL |   Public Policy |
+| PUBHLTH |   Public Health |
+| RADIO |  Radiology |
+| REL STD |    Religious Studies |
+| ROTC |   Reserve Officers' Training Corps |
+| RUSSIAN |   Russian |
+| SOC SCI |    Social Science |
+| SOCECOL |   Social Ecology |
+| SOCIOL | Sociology |
+| SPANISH |   Spanish |
+| SPPS |   Social Policy & Public Service |
+| STATS |  Statistics |
+| SURGERY |  Surgery |
+| SWE |   Software Engineering (started 2019 Fall) |
+| TAGALOG |   Tagalog |
+| TOX | Toxicology |
+| UCDC |   UC Washington DC |
+| UNI AFF | University Affairs |
+| UNI STU | University Studies |
+| UPPP |   Urban Planning and Public Policy (started 2018 Fall) |
+| VIETMSE |   Vietnamese |
+| VIS STD | Visual Studies |
+| WRITING |    Writing |
 
-##### ge #####
+
+##### courseNum #####
+
+- Multiple entries allowed
 
 | Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
+| ------------- |-------------|
+| 5       | {dept} 5 equiavlent |
+| 1-20       | {dept} 1 TO {dept} 20 equivalent |
+| 5, 10       | {dept} 5 equiavlent AND {dept} 10 equivalent|
 
-##### ge #####
-
-| Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
-
-##### ge #####
+##### divison #####
 
 | Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
+| ------------- |-------------|
+| 0xx        | Lower Divion Only |
+| 1xx        | Upper Divion Only |
+| 2xx        | Graduate/Professional Only |
 
-##### ge #####
-
-| Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
-
-##### ge #####
+##### secCodes #####
 
 | Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
+| ------------- |-------------|
+| 35980       | Course Code 35980 |
+| 35000-35600       | Courses with codes between 35000 ann 36000 |
 
-##### ge #####
-
-| Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
-
-##### ge #####
+##### instrName #####
 
 | Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
+| ------------- |-------------|
+| Doe        | Last Name of Professors/TA |
 
-##### ge #####
+##### courseTitle #####
 
 | Valid Value | Explanation |
-| ------------- |-------------:|
-| 2023-14        | 2023 is the year and 14 indicates Spring |
+| ------------- |-------------|
+| GAME       | Courses names that include GAME will be shown |
+
+##### sectionType #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| ACT        | Activity Courses |
+| COL        | Colloquium Courses |
+| DIS        | Discussion Courses |
+| FLD        | Field Work Courses |
+| LAB        | Laboratory Courses |
+| LEC        | Lecture Courses |
+| QIZ        | Quiz Courses |
+| RES        | Research Courses |
+| SEM        | Seminar Courses |
+| STU        | Studio Courses |
+| TUT        | Tutorial Courses |
+
+##### units #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| 4        | 4 Unit course, Any matching number is allowed |
+| VAR        | Variable Unit course |
+
+##### days #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| MWF       | Includes Monday, Wednesday, Friday |
+| MO       | Includes Monday |
+| WE       | Includes Wednesday |
+| FR       | Includes Friday |
+| TuTh       | Includes Tuesday, Thursday |
+| Tu       | Includes Tuesday |
+| Th       | Includes Thursday |
+
+##### startTime #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| 9:00am        | classes that start at 9:00 AM or Later. Other times that follow the same format should work|
+| 1:00pm       | classes that start at 1:00 PM or Later. Other times that follow the same format should wor |
+
+##### endTime #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| 1:00pm        | classes that end at 1:00 PM or Earlier |
+
+##### maxCap #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| >50        | Maximum capacity is atleast 50 |
+| <100        | Maximum capacity is less than 100 |
+
+##### fullCourses #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| SkipFullWaitlist   | Skip any that are full unless Waitlist has space |
+| SkipFull   | Skip any that are full |
+| FullOnly   | Show only courses that are full or waitlisted |
+| OverEnrolled   | Show only courses that are over-enrolled |
+
+##### cancelledCourses #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| EXCLUDE        | Default, Exclude cancelled courses |
+| INCLUDE        | Include cancelled courses |
+| ONLY        | Only show cancelled courses |
+
+##### building #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| ELH        | Engineering Lecture Hall Building Code |
+
+- Please refer to UCI map for list of buildings and their codes
+
+##### room #####
+
+| Valid Value | Explanation |
+| ------------- |-------------|
+| 100        | {building} 100 equivalent classroom|
+
+- Please refer to UCI map for list of buildings and their room numbers
