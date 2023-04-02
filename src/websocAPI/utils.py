@@ -1,11 +1,23 @@
 import requests
 import random
 from bs4 import BeautifulSoup as bs
+import json
 
 class InvalidTermNameException(Exception):
     pass
 class InvalidYearException(Exception):
     pass
+
+def prettify(obj, indents = 1):
+    """
+    Args:
+        obj: dictionary data retrived from webscrape.webSocAPI
+        indent: index of prettified data, default = 1
+    Returns:
+        Pretty JSON data of obj
+    """
+    newObj = json.dumps(obj, indent=indents)
+    return newObj
 
 def getYear(userTerm = None, userYear = None) -> str:
     """Check for the newly updated course term.
