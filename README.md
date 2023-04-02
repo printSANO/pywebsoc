@@ -57,25 +57,30 @@ print(utils.prettify(obj))
 
 ### **Arguments and Parameters** ##
 
-| WebSocAPI's Parameters | Explanation |Default Value   | Valid Values  |
+- WebSocAPI Main
+
+| WebSocAPI's Parameters | Explanation |Default Value| Example Value|
 | ------------- |:-------------:| :--------:| --------:|
-| term          | year and term | ""        | 4 |
-| ge            | centered      |   $12     | 4 |
-| dept          | are neat      |    $1     | 4 |
-| courseNum     | are neat      |    $1     | 4 |
-| divison       | are neat      |    $1     | 4 |
-| secCodes      | are neat      |    $1     | 4 |
-| instrName     | are neat      |    $1     | 4 |
-| courseTitle   | are neat      |    $1     | 4 |
-| sectionType   | are neat      |    $1     | 4 |
-| units         | are neat      |    $1     | 4 |
-| days          | are neat      |    $1     | 4 |
-| startTime     | are neat      |    $1     | 4 |
-| endTime       | are neat      |    $1     | 4 |
-| maxCap        | are neat      |    $1     | 4 |
-| fullCourses   | are neat      |    $1     | 4 |
-| cancelledCourses | are neat      |    $1  | 4 |
-| building      | are neat      |    $1     | 4 |
-| room          | are neat      |    $1     | 4 |
+| term          | Year and Term | ""        | "2023-14" |
+| ge            | General education |  "ANY"   | "GE-2" |
+| dept          | Department Name|   "ALL"    | "I&C SCI" |
+| courseNum     | Course number or range     |    ""    | "193" |
+| divison       | Course level      |   "ANY"    | "0xx" |
+| secCodes      | Course code or range      |   ""   | "35870" |
+| instrName     | Instructor      | ""    | "Doe, J." |
+| courseTitle   | Course title contains...      | ""    | "GAME" |
+| sectionType   | Course Type      |   "ALL"    | "LEC"  |
+| units         | Units      | ""    | "4" |
+| days          | Days     |  ""   | "TuTh" |
+| startTime     | Starting time after      |  "9:00am"   | 
+| endTime       | Ending time before      |  ""   | "9:00pm" |
+| maxCap        | Maximum Capacity      |  ""  | ">50" |
+| fullCourses   | Courses full option      |  "ANY"   |  "SkipFull" |
+| cancelledCourses | Cancelled COurses     |  "EXCLUDE" | "Include" |
+| building      | Building Code      |  ""   | "ELH" |
+| room          | Class Room Number      |  ""  | "100" |
 
-
+- WebSocAPI Parameter's Valid Values
+| WebSocAPI's Parameters | Explanation |Default Value| Example Value|
+| ------------- |:-------------:| :--------:| --------:|
+| term          | Year and Term | ""        | "2023-14" |

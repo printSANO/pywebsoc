@@ -38,7 +38,7 @@ def webSocAPI(term = "", ge = "ANY", dept = "ALL", courseNum = "", division = "A
 
     headers["User-Agents"] = f"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.{random.randrange(99)} (KHTML, like Gecko) Chrome/87.0.4280.67 Safari/537.36"
     parameters["ShowFinals"] = "1"
-    parameters["ShowComments"] = ""
+    parameters["ShowComments"] = "0"
     parameters["YearTerm"] = term
     parameters["Breadth"] = ge
     parameters["Dept"] = dept
