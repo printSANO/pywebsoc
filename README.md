@@ -15,8 +15,8 @@
 - How to start:
 
 ```python
-from websocAPI import webscrape, utils
-obj = webscrape.webSocAPI(term=utils.getYear("Spring", 2023),dept="I&C SCI", courseNum="193")
+from websocAPI import getYear, websocAPI
+obj = webSocAPI(term=getYear("Spring", 2023),dept="I&C SCI", courseNum="193")
 print(obj)
 # {'I&C Sci 193 TUTORING IN ICS': [{'Code': '35990', 'Type': 'Lec', 'Sec': 'A', 'Units': '2', 'Instructor': 
 # ['WONG-MA, J.', 'SHINDLER, M.'], 'Time': 'Tu \xa0  2:00- 3:20p', 'Place': 'ALP 1700', 'Final': 'Thu, Jun 15,
@@ -25,9 +25,9 @@ print(obj)
 ```
 - or you can also have a pretty json:
 ```python
-from websocAPI import webscrape, utils
-obj = webscrape.webSocAPI(term=utils.getYear("Spring", 2023),dept="I&C SCI", courseNum="193")
-print(utils.prettify(obj))
+from websocAPI import getYear, websocAPI, prettify
+obj = webSocAPI(term=getYear("Spring", 2023),dept="I&C SCI", courseNum="193")
+print(prettify(obj))
 # {
 #  "I&C Sci 193 TUTORING IN ICS": [
 #   {
@@ -394,11 +394,11 @@ print(utils.prettify(obj))
 - Examples of getYear function:
 
 ```python
-from websocAPI import utils
-default_output = utils.getYear() #This will return the most current year and term of courses available
-manual_term = utils.getYear("Winter") #This will return the Winter term of corresponding current year
-manual_year = utils.getYear(userYear=2021) ##This will return the most current term of 2021
-manual_term_and_year = utils.getYear("Winter", 2022) #This will return Winter term of 2022
+from websocAPI import getYear
+default_output = getYear() #This will return the most current year and term of courses available
+manual_term = getYear("Winter") #This will return the Winter term of corresponding current year
+manual_year = getYear(userYear=2021) ##This will return the most current term of 2021
+manual_term_and_year = getYear("Winter", 2022) #This will return Winter term of 2022
 ```
 
 ##### Function prettify #####
