@@ -5,8 +5,8 @@ with open("README.md", "r", encoding = "utf-8") as f:
 
 setup(
     name = "pywebsoc",
-    version = "0.0.1",
-    author = "Ryan Lee, Anastacio Ruiz, Ernest",
+    version = "0.0.12",
+    author = "Ryan Lee, Anastacio Ruiz, Ernest Yao",
     author_email = "rhahnwoonglee@gmail.com",
     description = "UCI WebSoc API and Other Packages",
     long_description = long_description,
@@ -23,5 +23,9 @@ setup(
     ],
     package_dir = {"": "src"},
     packages = find_packages(where="src"),
-    python_requires = ">=3.6"
+    python_requires = ">=3.6",
+    install_requires = [
+        'beautifulsoup4>=4.11.1',
+        'requests>=2.28.1'
+    ]
 )

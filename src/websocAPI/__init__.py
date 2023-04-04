@@ -1,2 +1,2 @@
 from .utils import getYear, prettify
-from .webscrape import webSocAPI
+from .webscrape import websocAPI
