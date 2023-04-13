@@ -72,7 +72,7 @@ print(prettify(obj))
 | sectionType   | Course Type      |   "ALL"    | "LEC"  |
 | units         | Units      | ""    | "4" |
 | days          | Days     |  ""   | "TuTh" |
-| startTime     | Starting time after      |  "9:00am"   | 
+| startTime     | Starting time after|   ""   |  "9:00am"   | 
 | endTime       | Ending time before      |  ""   | "9:00pm" |
 | maxCap        | Maximum Capacity      |  ""  | ">50" |
 | fullCourses   | Courses full option      |  "ANY"   |  "SkipFull" |
